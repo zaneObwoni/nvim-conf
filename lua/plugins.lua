@@ -25,6 +25,9 @@ vim.cmd([[
       " themes
       Plug 'tanvirtin/monokai.nvim'
 
+      " Dashboard
+      Plug 'glepnir/dashboard-nvim'
+
 	call plug#end()
 ]])
 
