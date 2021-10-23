@@ -14,7 +14,6 @@ local opt = vim.opt         		-- global/buffer/windows-scoped options
 local keymap = vim.api.nvim_set_keymap
 
 
-
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 
 cmd([[
@@ -27,9 +26,9 @@ cmd([[
     nnoremap <leader>fb <cmd>Telescope buffers<cr>
     nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-    " floating terminal 
-    let g:floaterm_keymap_new = '<Leader>ft'
+    " floating terminal
     let g:floaterm_keymap_toggle = '<Leader>t'
+    let g:floaterm_keymap_new = '<Leader>ft'
 
 ]])
 
