@@ -22,6 +22,9 @@ vim.cmd([[
 	    Plug 'ray-x/guihua.lua', {'do': 'cd lua/fzy && make' }
 	    Plug 'ray-x/navigator.lua'
 
+      " themes
+      Plug 'tanvirtin/monokai.nvim'
+
 	call plug#end()
 ]])
 
