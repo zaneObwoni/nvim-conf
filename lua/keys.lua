@@ -27,6 +27,10 @@ cmd([[
     nnoremap <leader>fb <cmd>Telescope buffers<cr>
     nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+    " floating terminal 
+    let g:floaterm_keymap_new = '<Leader>ft'
+    let g:floaterm_keymap_toggle = '<Leader>t'
+
 ]])
 
 

@@ -9,6 +9,15 @@ vim.cmd([[
 
     " lsp
     Plug 'neovim/nvim-lspconfig'
+    Plug 'ray-x/guihua.lua', {'do': 'cd lua/fzy && make' }
+    Plug 'ray-x/navigator.lua'
+
+    " optional, if you need treesitter symbol support
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+    " floating terminal
+    Plug 'voldikss/vim-floaterm'
+
 
     Plug 'tomasiser/vim-code-dark'
 	call plug#end()
