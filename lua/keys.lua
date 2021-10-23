@@ -17,7 +17,7 @@ local keymap = vim.api.nvim_set_keymap
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 
 cmd([[
-  let mapleader = ";"
+  let mapleader = " "
 
 
   " telescope
