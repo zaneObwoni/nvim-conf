@@ -1,40 +1,17 @@
-local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-end
+vim.cmd([[
+	" Specify a directory for plugins
+	" - For Neovim: stdpath('data') . '/plugged'
+	" - Avoid using standard Vim directory names like 'plugin'
+	call plug#begin('~/.vim/plugged')
+		" Initialize plugin system
+		Plug 'nvim-lua/plenary.nvim'
+		Plug 'nvim-telescope/telescope.nvim'
 
+    " lsp
+    Plug 'neovim/nvim-lspconfig'
 
-return require('packer').startup(function(use)
-
-	-- Packer can mange itself as an optional plugin
-	use {'wbthomason/packer.nvim', opt = true}
-
-	use {
-	  'nvim-telescope/telescope.nvim',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-	}
-
-	use 'neovim/nvim-lspconfig'
-      	use 'honza/vim-snippets'
-      	use '9mm/vim-closer'
-      	use 'ray-x/lsp_signature.nvim'
-      	user 'tweekmonster/startuptime.vim'
-
-	 -- autocomplete and snippets
-	 use 'neovim/nvim-lspconfig'
-	 use 'hrsh7th/cmp-nvim-lsp'
-	 use 'hrsh7th/nvim-buffer'
-	 use 'hrsh7th/vim-vsnip'
-	 use 'hrsh7th/cmp-vsnip'
-
-	-- Automatically set up your configuration after cloning packer.nvim
-  	-- Put this at the end after all plugins
-  	if packer_bootstrap then
-    		require('packer').sync()
-  	end
-
-    end
-)
+    Plug 'tomasiser/vim-code-dark'
+	call plug#end()
+]])
 
 

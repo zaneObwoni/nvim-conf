@@ -1,14 +1,32 @@
-vim.api.nvim_command('command! TSRehighlight :write | edit | TSBufEnable highlight')
+-----------------------------------------------------------
+-- Neovim settings
+-----------------------------------------------------------
 
-local opts = {noremap = true, silent = true}
+-----------------------------------------------------------
+-- Neovim API aliases
+-----------------------------------------------------------
+--local map = vim.api.nvim_set_keymap  -- set global keymap
+local cmd = vim.cmd     				-- execute Vim commands
+local exec = vim.api.nvim_exec 	-- execute Vimscript
+local fn = vim.fn       				-- call Vim functions
+local g = vim.g         				-- global variables
+local opt = vim.opt         		-- global/buffer/windows-scoped options
+local keymap = vim.api.nvim_set_keymap
 
-vim.g.mapleader = ' '
 
 
--- telescope
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
+
+cmd([[
+  let mapleader = ";"
+
+
+  " telescope
+    nnoremap <leader>ff <cmd>Telescope find_files<cr>
+    nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+    nnoremap <leader>fb <cmd>Telescope buffers<cr>
+    nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+]])
 
 
