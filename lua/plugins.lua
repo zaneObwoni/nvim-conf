@@ -6,6 +6,7 @@ vim.cmd([[
 		" Initialize plugin system
 		Plug 'nvim-lua/plenary.nvim'
 		Plug 'nvim-telescope/telescope.nvim'
+    Plug 'folke/which-key.nvim'
 
 	    " optional, if you need treesitter symbol support
 	    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
