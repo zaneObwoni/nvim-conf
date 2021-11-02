@@ -1,35 +1,45 @@
-vim.cmd([[
-	" Specify a directory for plugins
-	" - For Neovim: stdpath('data') . '/plugged'
-	" - Avoid using standard Vim directory names like 'plugin'
-	call plug#begin('~/.vim/plugged')
-		" Initialize plugin system
-		Plug 'nvim-lua/plenary.nvim'
-		Plug 'nvim-telescope/telescope.nvim'
-    Plug 'folke/which-key.nvim'
+-- Only required if you have packer configured as `opt`
+vim.cmd [[packadd packer.nvim]]
 
-	    " optional, if you need treesitter symbol support
-	    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+return require('packer').startup(function()
 
-	    " floating terminal
-	    Plug 'voldikss/vim-floaterm'
+-- Looks
+use 'EdenEast/nightfox.nvim'
+use 'sainnhe/sonokai'
+use 'miyakogi/seiya.vim'
+
+-- Functional
+use 'jiangmiao/auto-pairs'
+use 'nvim-lua/plenary.nvim'
+use 'voldikss/vim-floaterm'
+use 'nvim-telescope/telescope.nvim'
 
 
-	    Plug 'tomasiser/vim-code-dark'
+-- Autocompletions
+use 'neovim/nvim-lspconfig'
+use 'hrsh7th/vim-vsnip'
+use 'hrsh7th/nvim-compe'
+use 'L3MON4D3/LuaSnip'
 
-	    " neovim lsp
-	    Plug 'neovim/nvim-lspconfig'
-      Plug 'hrsh7th/nvim-compe'
-	    Plug 'ray-x/guihua.lua', {'do': 'cd lua/fzy && make' }
-	    Plug 'ray-x/navigator.lua'
+-- Hybrid
+use 'hoob3rt/lualine.nvim'
+use 'lewis6991/gitsigns.nvim'
 
-      " themes
-      Plug 'tanvirtin/monokai.nvim'
 
-      " Dashboard
-      Plug 'glepnir/dashboard-nvim'
+-- Navigation
+use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function() require'nvim-tree'.setup {} end
+}
+use {
+  'romgrk/barbar.nvim',
+  requires = {'kyazdani42/nvim-web-devicons'}
+}
+use 'unblevable/quick-scope'
+use 'justinmk/vim-sneak'
 
-	call plug#end()
-]])
+
+end)
 
 

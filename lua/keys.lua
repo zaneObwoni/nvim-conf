@@ -30,5 +30,34 @@ cmd([[
     let g:floaterm_keymap_toggle = '<Leader>t'
     let g:floaterm_keymap_new = '<Leader>ft'
 
+    "split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <leader>vs :vsplit<cr>
+
+" clear highlight
+nnoremap <leader>m :noh<return>
+nno <BS> :set hls!\|set hls?<CR>
+
+" init.vim quick edits
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Searching
+set smartcase
+set ignorecase
+set wildmenu "graphical auto complete menu
+
+" GITSIGNS
+lua require('gitsigns').setup()
+nnoremap <silent><leader>gn :Gitsigns next_hunk<cr>zzzv
+nnoremap <silent><leader>gp :Gitsigns prev_hunk<cr>zzzv
+nnoremap <silent><leader>gg :Gitsigns preview_hunk<cr>
+nnoremap <leader>gs :Gitsigns stage_hunk<cr>
+nnoremap <leader>gc :!git commit -m "
+
+
 ]])
 

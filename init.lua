@@ -1,4 +1,6 @@
-require("plugins")
+require('plugins')
+require('vim-plugs')
+
 require('keys')
 require('options')
 require('setup')
